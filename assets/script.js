@@ -23,11 +23,11 @@ function countdown() {
   }
 
 function showQuestion(question) {
-  questionEl.innerText = question.question
+  questionEl.textContent = question.question
 }
 
-function showAnswer(answer) {
-  answerButtonEl.textContent = answers.text
+function showAnswer() {
+  
 }
 
 function nextQuestion() {
@@ -48,7 +48,7 @@ function quizBegin() {
     countdown()
 }
 
-const questionList = [
+var questionList = [
   {
     question:'What is your name?', 
     answers: [
