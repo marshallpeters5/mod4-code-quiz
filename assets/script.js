@@ -1,10 +1,46 @@
 var startButton = document.getElementById('start');
 var timerEl = document.getElementById('timer');
-var questionContent = document.getElementById('question-content')
-var questionList = [
+var questionContent = document.getElementById('question-content');
+var questionEl = document.getElementById('question');
+var answerButtonEl = document.getElementById('answer-btns');
+var introText = document.getElementById('intro');
+var randomQuestion;
+var currentQuestion;
+
+
+function countdown() {
+    var timeLeft = 120
+    timerEl.textContent = "Time Remaining: " + 120
+    var timeInterval = setInterval(function () {
+      timeLeft--
+      timerEl.textContent = "Time Remaining: " + timeLeft
+        if(timeLeft == -1){
+          clearInterval(timeInterval)
+          timerEl.textContent = " "
+          displayMessage();
+        }
+    }, 1000);
+  }
+function nextQuestion() {
+  showQuestion(randomQuestion[currentQuestion])
+}
+function showQuestion(question) {
+  questionEl.innerText = question.question
+}
+function quizBegin() {
+  questionContent.classList.remove('hidden')
+  startButton.classList.add('hidden')
+  introText.classList.add('hidden')
+    randomQuestion = questionList.sort(() => Math.random() - .5)
+    currentQuestion = 0
+    nextQuestion()
+    countdown()
+}
+
+const questionList = [
   {
-    Question:'What is your name?', 
-    Answers: [
+    question:'What is your name?', 
+    answers: [
       {text: 'A. Marshall', correct: true},
       {text: 'B. John', correct: false},
       {text: 'B. Steve', correct: false},
@@ -12,28 +48,5 @@ var questionList = [
     ]
   }
 ]
-
-function countdown() {
-    var timeLeft = 120;
-    timerEl.textContent = "Time Remaining: " + 120;
-    var timeInterval = setInterval(function () {
-      timeLeft--;
-      timerEl.textContent = "Time Remaining: " + timeLeft;
-        if(timeLeft == -1){
-          clearInterval(timeInterval);
-          timerEl.textContent = " ";
-          displayMessage();
-        }
-    }, 1000);
-  }
-function nextQuestion() {
-
-}
-function quizBegin() {
-  questionContent.classList.remove('hidden');
-  startButton.classList.add('hidden');
-    nextQuestion();
-    countdown();
-}
 
 startButton.addEventListener("click", quizBegin);

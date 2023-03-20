@@ -47,6 +47,9 @@ button:active {
 .hidden{
     display: none;
 }
+#card{
+    margin-top: 150px;
+}
 @media screen and (max-width: 650px){
     h1 {
         width: 6em;
