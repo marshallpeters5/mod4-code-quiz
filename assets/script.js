@@ -3,8 +3,13 @@ var timerEl = document.getElementById('timer');
 var questionContent = document.getElementById('question-content')
 var questionList = [
   {
-  Question:'What is your name?', 
-  Answers: ["A. Steve", "B. Joe", "C. Manny", "D. John"]
+    Question:'What is your name?', 
+    Answers: [
+      {text: 'A. Marshall', correct: true},
+      {text: 'B. John', correct: false},
+      {text: 'B. Steve', correct: false},
+      {text: 'B. Zachary', correct: false}
+    ]
   }
 ]
 
