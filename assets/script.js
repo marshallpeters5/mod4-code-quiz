@@ -3,7 +3,7 @@ var timerEl = document.getElementById('timer');
 var questionContent = document.getElementById('question-content')
 var questionList = [
   {
-  Question:"What is your name?", 
+  Question:'What is your name?', 
   Answers: ["A. Steve", "B. Joe", "C. Manny", "D. John"]
   }
 ]
@@ -21,14 +21,13 @@ function countdown() {
         }
     }, 1000);
   }
+function nextQuestion() {
 
-function showQuestion() {
-  questionContent.classList.remove('hidden');
 }
-
 function quizBegin() {
-    startButton.classList.add('hidden');
-    showQuestion();
+  questionContent.classList.remove('hidden');
+  startButton.classList.add('hidden');
+    nextQuestion();
     countdown();
 }
 
