@@ -2,7 +2,7 @@ var startButton = document.getElementById('start');
 var timerEl = document.getElementById('timer');
 var questionContent = document.getElementById('question-content');
 var questionEl = document.getElementById('question');
-var answerButtonEl = document.getElementById('answer-buttons');
+var answerButtonEl = document.getElementsByClassName('answer-btn');
 var introText = document.getElementById('intro');
 var randomQuestion;
 var currentQuestion;
@@ -24,7 +24,10 @@ function countdown() {
 
 function showQuestion(question) {
   questionEl.innerText = question.question
+}
 
+function showAnswer(answer) {
+  answerButtonEl.textContent = answers.text
 }
 
 function nextQuestion() {
