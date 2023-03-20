@@ -1,5 +1,6 @@
 var startButton = document.getElementById('start');
 var timerEl = document.getElementById('timer');
+var questionContent = document.getElementById('question-content')
 var questionList = [
   {
   Question:"What is your name?", 
@@ -22,7 +23,6 @@ function countdown() {
   }
 
 function showQuestion() {
-  var questionContent = document.querySelector('#question-content');
   questionContent.classList.remove('hidden');
 }
 
