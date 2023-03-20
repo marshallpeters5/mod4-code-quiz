@@ -41,7 +41,7 @@ function answerChoice() {
   } else {
     alert("Incorrect!")
     incorrectCount++;
-    timeLeft - 30
+    timeLeft -= 30
   }
 }
 
