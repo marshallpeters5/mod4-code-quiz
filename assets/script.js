@@ -24,10 +24,15 @@ function countdown() {
     }, 1000);
   }
 
-function showQuestion(question) {
+function showQuestion(question, questionContent) {
   questionEl.textContent = question.question
   for (var i = 0; i < question.length; i++)
   answers = []
+  for(letter in questions[i].answers){
+    answers.push(
+        letter + ': ' + questions[i].answers[letter]
+    );
+  }
 }
 
 function nextQuestion() {
