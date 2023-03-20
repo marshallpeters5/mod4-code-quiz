@@ -24,10 +24,8 @@ function countdown() {
 
 function showQuestion(question) {
   questionEl.textContent = question.question
-}
-
-function showAnswer() {
-  
+  for (var i = 0; i < question.length; i++)
+  answers = []
 }
 
 function nextQuestion() {
@@ -52,28 +50,28 @@ var questionList = [
   {
     question:'What is your name?', 
     answers: [
-      {text: 'A. Marshall', correct: true},
-      {text: 'B. John', correct: false},
-      {text: 'B. Steve', correct: false},
-      {text: 'B. Zachary', correct: false}
+      {a: 'Marshall', correct: true},
+      {b: 'John', correct: false},
+      {c: 'Steve', correct: false},
+      {d: 'Zachary', correct: false}
     ]
   },
   {
     question:'How many fingers am I holding up?', 
     answers: [
-      {text: 'A. 2', correct: true},
-      {text: 'B. 4', correct: false},
-      {text: 'B. 9', correct: false},
-      {text: 'B. 12.. wait what?', correct: false}
+      {a: '2', correct: true},
+      {b: '4', correct: false},
+      {c: '9', correct: false},
+      {d: '12.. wait what?', correct: false}
     ]
   },
   {
   question:'What do you do at a stop sign?', 
   answers: [
-    {text: 'A. Stop', correct: true},
-    {text: 'B. Blow through it', correct: false},
-    {text: 'B. Rolling stop.', correct: false},
-    {text: 'B. None of the above', correct: false}
+    {a: 'Stop', correct: true},
+    {b: 'Blow through it', correct: false},
+    {c: 'Rolling stop.', correct: false},
+    {d: 'None of the above', correct: false}
     ]
   }
 ]
