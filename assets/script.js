@@ -2,7 +2,7 @@ var startButton = document.getElementById('start');
 var timerEl = document.getElementById('timer');
 var questionContent = document.getElementById('question-content');
 var questionEl = document.getElementById('question');
-var answerButtonEl = document.getElementById('answer-btns');
+var answerButtonEl = document.getElementById('answer-buttons');
 var introText = document.getElementById('intro');
 var randomQuestion;
 var currentQuestion;
@@ -21,12 +21,19 @@ function countdown() {
         }
     }, 1000);
   }
-function nextQuestion() {
-  showQuestion(randomQuestion[currentQuestion])
-}
+
 function showQuestion(question) {
   questionEl.innerText = question.question
 }
+
+function nextQuestion() {
+  showQuestion(randomQuestion[currentQuestion])
+}
+
+function answerChoice() {
+
+}
+
 function quizBegin() {
   questionContent.classList.remove('hidden')
   startButton.classList.add('hidden')
