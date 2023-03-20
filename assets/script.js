@@ -86,3 +86,4 @@ var questionList = [
 ]
 
 startButton.addEventListener("click", quizBegin);
+answerButtonEl.addEventListener("click", answerChoice)
