@@ -24,6 +24,7 @@ function countdown() {
 
 function showQuestion(question) {
   questionEl.innerText = question.question
+
 }
 
 function nextQuestion() {
@@ -52,6 +53,24 @@ const questionList = [
       {text: 'B. John', correct: false},
       {text: 'B. Steve', correct: false},
       {text: 'B. Zachary', correct: false}
+    ]
+  },
+  {
+    question:'How many fingers am I holding up?', 
+    answers: [
+      {text: 'A. 2', correct: true},
+      {text: 'B. 4', correct: false},
+      {text: 'B. 9', correct: false},
+      {text: 'B. 12.. wait what?', correct: false}
+    ]
+  },
+  {
+  question:'What do you do at a stop sign?', 
+  answers: [
+    {text: 'A. Stop', correct: true},
+    {text: 'B. Blow through it', correct: false},
+    {text: 'B. Rolling stop.', correct: false},
+    {text: 'B. None of the above', correct: false}
     ]
   }
 ]
