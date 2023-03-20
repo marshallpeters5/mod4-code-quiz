@@ -6,20 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Quiz</title>
     <link rel="stylesheet" href="./assets/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 <div id="bg"></div>
 <body>
     <header>
-        <h1>Welcome to JavaScript Code Quiz 2023</h1>
-            <p> Press the 'Start' button to begin the timed quiz. 
+        <h1 class="intro">Welcome to JavaScript Code Quiz 2023</h1>
+        <p class="intro"> Press the 'Start' button to begin the timed quiz. 
                 You will have two minutes to complete the quiz. 
                 For each incorrect question, time will be deducted. 
                 Good luck!
-            </p>
+        </p>
     </header>
-    <main>
-        <section>
-            <button id="start">Start</button>
+    <main id="card">
+        <content id="question-content" class="hidden">
+            <button class="btn">Answer</button>
+            <button class="btn">Answer</button>
+            <button class="btn">Answer</button>
+            <button class="btn">Answer</button>
+        </content>
+            <div>
+                <h2 id="timer">Time Remaining: 120</h2>
+            </div>
+        <section class="switch">
+            <button id="start" class="btn">Start</button>
+            <button id="next" class="btn hidden">Next</button>
         </section>
     </main>
 </body>
