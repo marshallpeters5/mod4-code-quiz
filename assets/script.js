@@ -6,13 +6,15 @@ var answerButtonEl = document.getElementsByClassName('answer-btn');
 var introText = document.getElementById('intro');
 var randomQuestion;
 var currentQuestion;
+var timeLeft = 120
+var correctCount = 0
+var incorrectCount = 0
 
 
 function countdown() {
-    var timeLeft = 120
     timerEl.textContent = "Time Remaining: " + 120
     var timeInterval = setInterval(function () {
-      timeLeft--
+      timeLeft--;
       timerEl.textContent = "Time Remaining: " + timeLeft
         if(timeLeft == -1){
           clearInterval(timeInterval)
@@ -33,7 +35,14 @@ function nextQuestion() {
 }
 
 function answerChoice() {
-
+  if (correct){
+  alert("Correct!")
+  correctCount++;
+  } else {
+    alert("Incorrect!")
+    incorrectCount++;
+    timeLeft - 30
+  }
 }
 
 function quizBegin() {
