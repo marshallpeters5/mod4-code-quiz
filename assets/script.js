@@ -4,6 +4,7 @@ var questionContent = document.getElementById('question-content');
 var questionEl = document.getElementById('question');
 var answerButtonEl = document.querySelectorAll('.answer-btn');
 var introText = document.getElementById('intro');
+var highScore = document.getElementById('high-score')
 var currentQuestion;
 var timeLeft = 120
 var correctCount = 0
@@ -33,8 +34,12 @@ function showQuestion(question, questionContent) {
 }
 
 function nextQuestion() {
+  if (currentQuestion > 2) {
+    questionContent.classList.add('hidden')
+    highScore.classList.remove('hidden')
+  } else {
   showQuestion(questionList[currentQuestion])
-
+  }
 }
 
 function answerChoice() {
