@@ -11,7 +11,6 @@ var correctCount = 0
 var incorrectCount = 0
 
 
-
 function countdown() {
     timerEl.textContent = "Time Remaining: " + 120
     var timeInterval = setInterval(function () {
@@ -42,9 +41,11 @@ function nextQuestion() {
   }
 }
 
-function answerChoice() {
+function answerChoice(event) {
+  var userChoice = event.target
+  var chosenAnswers = userChoice.slice
   var correctAnswers = ["Marshall", "8", "Gently stop" ]
-  if (correctAnswers = true){
+  if (userChoice == correctAnswers){
   alert("Correct!")
   correctCount++;
   } else {
@@ -73,7 +74,7 @@ var questionList = [
   },
   {
     question:'How many fingers am I holding up?', 
-    answers: ["2", "5", "8", "12.. wait"
+    answers: ["2", "5", "8", "12.. wait what?"
     ]
   },
   {
