@@ -2,9 +2,8 @@ var startButton = document.getElementById('start');
 var timerEl = document.getElementById('timer');
 var questionContent = document.getElementById('question-content');
 var questionEl = document.getElementById('question');
-var answerButtonEl = document.getElementsByClassName('answer-btn');
+var answerButtonEl = document.querySelectorAll('.answer-btn');
 var introText = document.getElementById('intro');
-var randomQuestion;
 var currentQuestion;
 var timeLeft = 120
 var correctCount = 0
@@ -25,22 +24,20 @@ function countdown() {
   }
 
 function showQuestion(question, questionContent) {
-  questionEl.textContent = question.question
-  for (var i = 0; i < question.length; i++)
-  answers = []
-  for(letter in questions[i].answers){
-    answers.push(
-        letter + ': ' + questions[i].answers[letter]
-    );
-  }
+  questionEl.textContent = question.question;
+  document.getElementById('a0').textContent = question.answers[0].a;
+  document.getElementById('a1').textContent = question.answers[1].b;
+  document.getElementById('a2').textContent = question.answers[2].c;
+  document.getElementById('a3').textContent = question.answers[3].d;
 }
 
 function nextQuestion() {
-  showQuestion(randomQuestion[currentQuestion])
+  showQuestion(questionList[currentQuestion])
+
 }
 
 function answerChoice() {
-  if (correct){
+  if (currentQuestion){
   alert("Correct!")
   correctCount++;
   } else {
@@ -48,13 +45,14 @@ function answerChoice() {
     incorrectCount++;
     timeLeft -= 30
   }
+  currentQuestion++;
+  nextQuestion();
 }
 
 function quizBegin() {
   questionContent.classList.remove('hidden')
   startButton.classList.add('hidden')
   introText.classList.add('hidden')
-    randomQuestion = questionList.sort(() => Math.random() - .5)
     currentQuestion = 0
     nextQuestion()
     countdown()
@@ -91,4 +89,6 @@ var questionList = [
 ]
 
 startButton.addEventListener("click", quizBegin);
-answerButtonEl.addEventListener("click", answerChoice)
+answerButtonEl.forEach(function(answer){
+answer.addEventListener("click", answerChoice)
+})
