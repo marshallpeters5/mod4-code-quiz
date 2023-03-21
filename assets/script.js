@@ -25,10 +25,10 @@ function countdown() {
 
 function showQuestion(question, questionContent) {
   questionEl.textContent = question.question;
-  document.getElementById('a0').textContent = question.answers[0].a;
-  document.getElementById('a1').textContent = question.answers[1].b;
-  document.getElementById('a2').textContent = question.answers[2].c;
-  document.getElementById('a3').textContent = question.answers[3].d;
+  document.getElementById('0').textContent = question.answers[0];
+  document.getElementById('1').textContent = question.answers[1];
+  document.getElementById('2').textContent = question.answers[2];
+  document.getElementById('3').textContent = question.answers[3];
 }
 
 function nextQuestion() {
@@ -36,7 +36,7 @@ function nextQuestion() {
 
 }
 
-function answerChoice() {
+function answerChoice(answer) {
   if (currentQuestion){
   alert("Correct!")
   correctCount++;
@@ -61,30 +61,18 @@ function quizBegin() {
 var questionList = [
   {
     question:'What is your name?', 
-    answers: [
-      {a: 'Marshall', correct: true},
-      {b: 'John', correct: false},
-      {c: 'Steve', correct: false},
-      {d: 'Zachary', correct: false}
-    ]
+    answers: ["Marshall", "John", "Steve", "Zachary"
+    ], correct: 0
   },
   {
     question:'How many fingers am I holding up?', 
-    answers: [
-      {a: '2', correct: true},
-      {b: '4', correct: false},
-      {c: '9', correct: false},
-      {d: '12.. wait what?', correct: false}
-    ]
+    answers: ["2", "5", "8", "12.. wait what?"
+    ], correct: 2
   },
   {
   question:'What do you do at a stop sign?', 
-  answers: [
-    {a: 'Stop', correct: true},
-    {b: 'Blow through it', correct: false},
-    {c: 'Rolling stop.', correct: false},
-    {d: 'None of the above', correct: false}
-    ]
+  answers: ["Stop.", "Blow through it.", "Try to hit pedestrians.", "Scream into the void."
+    ], correct: 0
   }
 ]
 
