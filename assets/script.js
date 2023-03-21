@@ -10,14 +10,15 @@ var correctCount = 0
 var incorrectCount = 0
 
 
+
 function countdown() {
     timerEl.textContent = "Time Remaining: " + 120
     var timeInterval = setInterval(function () {
       timeLeft--;
       timerEl.textContent = "Time Remaining: " + timeLeft
-        if(timeLeft == -1){
+        if(timeLeft <= -1){
           clearInterval(timeInterval)
-          timerEl.textContent = " "
+          timerEl.textContent = "Game Over"
           displayMessage();
         }
     }, 1000);
@@ -36,8 +37,9 @@ function nextQuestion() {
 
 }
 
-function answerChoice(answer) {
-  if (currentQuestion){
+function answerChoice() {
+  var correctAnswers = ["Marshall", "8", "Gently stop" ]
+  if (correctAnswers = true){
   alert("Correct!")
   correctCount++;
   } else {
@@ -62,17 +64,17 @@ var questionList = [
   {
     question:'What is your name?', 
     answers: ["Marshall", "John", "Steve", "Zachary"
-    ], correct: 0
+    ]
   },
   {
     question:'How many fingers am I holding up?', 
-    answers: ["2", "5", "8", "12.. wait what?"
-    ], correct: 2
+    answers: ["2", "5", "8", "12.. wait"
+    ]
   },
   {
   question:'What do you do at a stop sign?', 
-  answers: ["Stop.", "Blow through it.", "Try to hit pedestrians.", "Scream into the void."
-    ], correct: 0
+  answers: ["Gently stop", "Blow through it", "Try to hit pedestrians", "Scream"
+    ]
   }
 ]
 
