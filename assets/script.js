@@ -10,7 +10,7 @@ var timeLeft = 120
 var correctCount = 0
 var incorrectCount = 0
 
-
+// counts down a timer, when the timer hits zero, 'game over is displayed'
 function countdown() {
     timerEl.textContent = "Time Remaining: " + 120
     var timeInterval = setInterval(function () {
@@ -24,6 +24,7 @@ function countdown() {
     }, 1000);
   }
 
+// mostly working as intended, shows the question content
 function showQuestion(question, questionContent) {
   questionEl.textContent = question.question;
   document.getElementById('0').textContent = question.answers[0];
@@ -41,6 +42,7 @@ function nextQuestion() {
   }
 }
 
+// mostly broken, struggling to get this to display and recognize which answers are correct
 function answerChoice(event) {
   var userChoice = event.target
   var chosenAnswers = userChoice.slice
@@ -56,7 +58,7 @@ function answerChoice(event) {
   currentQuestion++;
   nextQuestion();
 }
-
+// working!
 function quizBegin() {
   questionContent.classList.remove('hidden')
   startButton.classList.add('hidden')
@@ -66,6 +68,7 @@ function quizBegin() {
     countdown()
 }
 
+//a neat list of arrays within an array
 var questionList = [
   {
     question:'What is your name?', 
@@ -84,6 +87,7 @@ var questionList = [
   }
 ]
 
+// an unideal solution to getting my event listeners to work
 startButton.addEventListener("click", quizBegin);
 answerButtonEl.forEach(function(answer){
 answer.addEventListener("click", answerChoice)
